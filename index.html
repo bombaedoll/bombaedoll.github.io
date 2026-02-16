@@ -6,26 +6,34 @@
     <title>Bombae Doll Digital Dollhouse - Free Kundali by @bombaedoll</title>
     <meta name="description" content="Enter the portal to generate your free Vedic kundali chart. Screenshot and DM @bombaedoll for readings! Black pink occult anime vibe.">
     <meta name="keywords" content="free kundali, janam kundali, vedic astrology, bombaedoll, kundali generator">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"> <!-- Elegant font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <style>
         body { margin: 0; background: black; color: #FF1493; font-family: 'Playfair Display', serif; overflow: hidden; text-align: center; }
-        video { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+        video { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; pointer-events: none; }
+        video::-webkit-media-controls { display: none !important; }
         .container { position: relative; z-index: 1; padding: 20px; margin-top: 40vh; }
         button { background: #FF1493; color: black; border: none; padding: 15px 30px; font-size: 20px; cursor: pointer; animation: pulse 2s infinite; border-radius: 10px; }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
         #kundali-form { display: none; margin-top: 20px; }
-        iframe { width: 100%; height: 80vh; border: none; } /* Mobile-friendly height */
+        iframe { width: 100%; height: 80vh; border: none; }
     </style>
 </head>
 <body>
-    <video autoplay loop muted playsinline src="https://res.cloudinary.com/dakr3xva1/video/upload/ACE85473-B91C-4E04-91E4-D569AD58B2E6_x4ngoe.mp4"></video>
+    <video id="portal-video" autoplay loop muted playsinline preload="auto" controls="false" src="https://res.cloudinary.com/dakr3xva1/video/upload/v1771239329/portal-loop-muted.mp4_dvnshd.mp4"></video>
     <div class="container">
         <h1>Enter The Dollhouse</h1>
         <button onclick="document.getElementById('kundali-form').style.display='block'; this.style.display='none';">Generate Kundali</button>
         <div id="kundali-form">
-            <iframe src="https://www.astrosage.com/freechart/" width="100%" height="800"></iframe>
+            <iframe src="https://www.mpanchang.com/astrology/kundali/janam-kundali" width="100%" height="800"></iframe>
         </div>
         <!-- AdSense code here later -->
     </div>
+    <script>
+        window.addEventListener('load', function() {
+            var video = document.getElementById('portal-video');
+            video.play().catch(function() {});
+            video.controls = false;
+        });
+    </script>
 </body>
 </html>
