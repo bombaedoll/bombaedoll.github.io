@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bombae Doll Digital Dollhouse</title>
 
+<style>
+body {
+  margin: 0;
+  background: black;
+  overflow: hidden;
+  font-family: serif;
+  color: #ff1493;
+}
+
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+button {
+  background: #ff1493;
+  color: black;
+  border: none;
+  padding: 15px 25px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<video autoplay muted loop playsinline>
+  <source src="https://res.cloudinary.com/dakr3xva1/video/upload/ACE85473-B91C-4E04-91E4-D569AD58B2E6_x4ngoe.mp4" type="video/mp4">
+</video>
+
+<div class="container">
+  <h1>Enter The Dollhouse</h1>
+  <button onclick="alert('Kundali section coming next')">
+    Generate Kundali
+  </button>
+</div>
+
+</body>
+</html>
