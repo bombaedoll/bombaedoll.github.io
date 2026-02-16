@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Digital Dollhouse</title>
+
+<style>
+body {
+  margin:0;
+  background:black;
+  overflow:hidden;
+  font-family: Georgia, serif;
+  color:white;
+}
+
+/* INTRO SCREEN */
+.portal-intro {
+  position:fixed;
+  width:100%;
+  height:100vh;
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  animation: fadeOut 2s forwards;
+  animation-delay: 4s;
+}
+
+.portal-smoke {
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  background: radial-gradient(circle, #ff2e88 0%, #000 70%);
+  animation: swirl 3s infinite linear;
+  box-shadow: 0 0 60px #ff2e88;
+}
+
+@keyframes swirl {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes fadeOut {
+  to { opacity:0; visibility:hidden; }
+}
+
+/* MAIN DOLLHOUSE */
+.dollhouse {
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: radial-gradient(circle at center, #1a001f 0%, black 70%);
+  animation: fadeIn 2s ease-in forwards;
+  animation-delay: 4s;
+  opacity:0;
+}
+
+@keyframes fadeIn {
+  to { opacity:1; }
+}
+
+.house {
+  width:250px;
+  height:300px;
+  background:#330033;
+  border:3px solid #ff2e88;
+  box-shadow:0 0 40px #ff2e88;
+  position:relative;
+}
+
+.snake-candle {
+  position:absolute;
+  top:-30px;
+  right:-30px;
+  width:40px;
+  height:80px;
+  background:linear-gradient(#111,#333);
+  border-radius:20px;
+  box-shadow:0 0 20px #ff2e88;
+  animation: flicker 1s infinite alternate;
+}
+
+@keyframes flicker {
+  from { box-shadow:0 0 10px #ff2e88; }
+  to { box-shadow:0 0 30px #ff66aa; }
+}
+
+h1 {
+  text-align:center;
+  font-size:20px;
+  margin-top:120px;
+  color:#ff66aa;
+  letter-spacing:2px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="portal-intro">
+  <div class="portal-smoke"></div>
+</div>
+
+<div class="dollhouse">
+  <div class="house">
+    <div class="snake-candle"></div>
+    <h1>Enter the Dollhouse</h1>
+  </div>
+</div>
+
+</body>
+</html>
