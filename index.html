@@ -1,39 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bombae Doll Digital Dollhouse - Free Kundali by @bombaedoll</title>
-    <meta name="description" content="Enter the portal to generate your free Vedic kundali chart. Screenshot and DM @bombaedoll for readings! Black pink occult anime vibe.">
-    <meta name="keywords" content="free kundali, janam kundali, vedic astrology, bombaedoll, kundali generator">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-    <style>
-        body { margin: 0; background: black; color: #FF1493; font-family: 'Playfair Display', serif; overflow: hidden; text-align: center; }
-        video { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; pointer-events: none; }
-        video::-webkit-media-controls { display: none !important; }
-        .container { position: relative; z-index: 1; padding: 20px; margin-top: 40vh; }
-        button { background: #FF1493; color: black; border: none; padding: 15px 30px; font-size: 20px; cursor: pointer; animation: pulse 2s infinite; border-radius: 10px; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
-        #kundali-form { display: none; margin-top: 20px; }
-        iframe { width: 100%; height: 80vh; border: none; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>BombaeDoll Portal</title>
+  <style>
+    /* Resets the page so there are no weird white borders */
+    body, html {
+      margin: 0;
+      padding: 0;
+      background-color: #000; /* Keeps the background deep black */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* The exact dimensions of your video to lock it in place */
+    .portal-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 430px; /* iPhone Pro Max width */
+      aspect-ratio: 9/16; 
+      margin: 0 auto;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    /* The video itself */
+    .portal-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* The Invisible Hitbox */
+    .hitbox {
+      position: absolute;
+      text-indent: -9999px; /* Hides the text */
+      background-color: rgba(255, 255, 255, 0);
+      border: none;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 8px;
+      transition: background-color 0.1s ease;
+
+      /* 🟢 DEBUG MODE IS ON: You will see a green box */
+      border: 2px solid lime;
+      background-color: rgba(0, 255, 0, 0.3);
+    }
+
+    /* Flashes white when tapped */
+    .hitbox:active {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* The specific placement for the Generate Chart button */
+    .generate-btn {
+      top: 96%; /* We will adjust this if needed */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 32%;
+      height: 4%;
+    }
+  </style>
 </head>
 <body>
-    <video id="portal-video" autoplay loop muted playsinline preload="auto" controls="false" src="https://res.cloudinary.com/dakr3xva1/video/upload/v1771239329/portal-loop-muted.mp4_dvnshd.mp4"></video>
-    <div class="container">
-        <h1>Enter The Dollhouse</h1>
-        <button onclick="document.getElementById('kundali-form').style.display='block'; this.style.display='none';">Generate Kundali</button>
-        <div id="kundali-form">
-            <iframe src="https://www.mpanchang.com/astrology/kundali/janam-kundali" width="100%" height="800"></iframe>
-        </div>
-        <!-- AdSense code here later -->
-    </div>
-    <script>
-        window.addEventListener('load', function() {
-            var video = document.getElementById('portal-video');
-            video.play().catch(function() {});
-            video.controls = false;
-        });
-    </script>
+
+  <div class="portal-wrapper">
+    <video 
+      autoplay 
+      muted 
+      loop 
+      playsinline 
+      preload="auto"
+      class="portal-video">
+      <source src="https://res.cloudinary.com/dakr3xva1/video/upload/v1771239329/portal-loop-muted.mp4_dvnshd.mp4" type="video/mp4">
+    </video>
+
+    <a href="https://www.astrosage.com/freechart/" target="_blank" class="hitbox generate-btn">
+      Generate Chart
+    </a>
+  </div>
+
 </body>
 </html>
